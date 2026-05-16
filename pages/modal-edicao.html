@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Câmera Frontal</title>
+    <title>Modal Edição</title>
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/modal-edicao.css">
     <link rel="shortcut icon" href="../assets/imgs/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../assets/css/fonts.css">
 </head>
@@ -26,7 +27,90 @@
             </header>
 
             <main class="principal">
-                <section class="hero"></section>
+                <section class="drag">
+                    <a href="../index.html"><span class="drag-pill"></span></a>
+                </section>
+
+                <section class="foto">
+                    <figure class="foto-figure">
+                        <img src="../assets/imgs/photos/img-camera-filtrada.webp" alt="Foto capturada" class="foto-img">
+                        <figcaption class="filtro-label">❤️ Love</figcaption>
+                    </figure>
+                </section>
+
+                <section class="edicao">
+                    <section class="filtros">
+                        <article class="filtro-card">
+                            <img src="../assets/imgs/photos/preview-1.png" alt="Filtro 1">
+                        </article>
+                        <article class="filtro-card">
+                            <img src="../assets/imgs/photos/preview-2.png" alt="Filtro 2">
+                        </article>
+                        <article class="filtro-card">
+                            <img src="../assets/imgs/photos/preview-3.png" alt="Filtro 3">
+                        </article>
+                        <article class="filtro-card">
+                            <img src="../assets/imgs/photos/preview-4.png" alt="Filtro 4">
+                        </article>
+                        <article class="filtro-card">
+                            <img src="../assets/imgs/photos/preview-1.png" alt="Filtro 5">
+                        </article>
+                        <article class="filtro-card">
+                            <img src="../assets/imgs/photos/preview-2.png" alt="Filtro 6">
+                        </article>
+                        <article class="filtro-card">
+                            <img src="../assets/imgs/photos/preview-3.png" alt="Filtro 7">
+                        </article>
+                        <article class="filtro-card">
+                            <img src="../assets/imgs/photos/preview-4.png" alt="Filtro 8">
+                        </article>
+                    </section>
+
+                    <section class="musica" aria-label="Música escolhida">
+                        <article class="musica-card">
+                            <div class="album-art">
+                                <img src="../assets/imgs/photos/filtro-emoji.png" alt="Capa do álbum">
+                            </div>
+                            <div class="track-info">
+                                <h2 class="track-title">No Lie</h2>
+                                <p class="track-artist">Sean Paul (part. Dua Lipa)</p>
+                                <p class="track-hint">Combina com sua viadagem</p>
+                            </div>
+                            <button class="play-btn" aria-label="Reproduzir">
+                                <img src="../assets/imgs/icons/icon-play.svg" alt="" width="35" height="35">
+                            </button>
+                        </article>
+
+                        <div class="musica-progress">
+                            <div class="slider-bar">
+                                <span class="slider-thumb slider-thumb-inicio"></span>
+                                <span class="slider-thumb slider-thumb-fim"></span>
+                            </div>
+                            <div class="tempos">
+                                <time>0:00</time>
+                                <time>0:15</time>
+                                <time>0:30</time>
+                            </div>
+                            <p class="trecho-label">Trecho · 0:00 → 0:15</p>
+                        </div>
+
+                        <button class="trocar-musica-btn">
+                            <img src="../assets/imgs/icons/icon-music.svg" alt="" width="24" height="24">
+                            <span>Trocar música</span>
+                        </button>
+                    </section>
+                </section>
+
+                <section class="opcoes" aria-label="Ações da postagem">
+                    <button class="btn-salvar">
+                        <img src="../assets/imgs/icons/icon-save.svg" alt="" width="24" height="24">
+                        <span>Salvar</span>
+                    </button>
+                    <button class="btn-postar">
+                        <img src="../assets/imgs/icons/icon-share.svg" alt="" width="24" height="24">
+                        <span>Postar agora</span>
+                    </button>
+                </section>
             </main>
 
             <footer class="rodape">

@@ -1,0 +1,356 @@
+:root {
+    --primary: #8d1514;
+    --second: #f8a20d;
+    --white: #f5eede;
+    --white-80: rgba(245, 238, 222, 0.8);
+    --white-60: rgba(245, 238, 222, 0.6);
+}
+
+/* Main rolável com fundo do modal */
+.principal {
+    background-color: var(--white);
+    border-top: 1px solid #cdc7b7;
+    border-radius: 30px 30px 0 0;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+.principal::-webkit-scrollbar {
+    display: none;
+}
+
+/* ── Drag handle ── */
+.drag {
+    height: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.drag-pill {
+    width: 100px;
+    height: 5px;
+    background: #d9d9d9;
+    border-radius: 100px;
+    display: block;
+}
+
+/* ── Foto ── */
+.foto {
+    padding: 0 5px 5px;
+}
+
+.foto-figure {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 0;
+}
+
+.foto-img {
+    width: 100%;
+    height: 100%;
+    max-height: 460px;
+    object-fit: cover;
+    display: block;
+}
+
+.filtro-label {
+    position: absolute;
+    bottom: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 12px;
+    font-family: var(--font-dmono);
+    font-weight: 500;
+    padding: 5px;
+    border-radius: 20px;
+    white-space: nowrap;
+    border: 0px;
+}
+
+.filtro-label{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.00);
+    backdrop-filter: blur(10px);
+    padding: 5px 8px;
+
+}
+
+.filtro-label {
+    border: 1px solid transparent;
+    background-clip: padding-box;
+    box-shadow: inset 0 1px 1px rgba(255,255,255,0.5),
+                inset 0 -1px 1px rgba(255, 255, 255, 0.5);
+    transition: background-color 0.3s ease;
+}
+
+
+/* ── Edição (filtros + música) ── */
+.edicao {
+    background: linear-gradient(180deg, rgba(248, 162, 13, 0.8) 0%, rgba(141, 21, 20, 0.8) 100%);
+    padding: 10px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* ── Filtros ── */
+.filtros {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 5px 0;
+    scrollbar-width: none;
+}
+
+.filtros::-webkit-scrollbar {
+    display: none;
+}
+
+.filtro-card {
+    flex-shrink: 0;
+    width: 70px;
+    height: 93px;
+    border-radius: 10px;
+    border: 1px solid var(--primary);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.filtro-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.filtro-card.filtro-ativo {
+    border: 2px solid var(--white);
+}
+
+/* ── Música ── */
+.musica {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.musica-card {
+    height: 55px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    padding: 0 10px;
+}
+
+.album-art {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    background: linear-gradient(180deg, var(--primary) 0%, #ff3b2c 100%);
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.album-art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.track-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    gap: 1px;
+    min-width: 0;
+}
+
+.track-title {
+    color: #fff;
+    font-size: 20px;
+    font-family: var(--font-dmono);
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+}
+
+.track-artist {
+    color: var(--white-80);
+    font-size: 12px;
+    font-family: var(--font-dmono);
+    font-weight: 300;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+}
+
+.track-hint {
+    color: var(--white-60);
+    font-size: 10px;
+    font-family: var(--font-dmono);
+    font-weight: 300;
+    font-style: italic;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+}
+
+.play-btn {
+    width: 54px;
+    height: 100%;
+    border-radius: 15px;
+    background-color: var(--second);
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* ── Progresso ── */
+.musica-progress {
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.slider-bar {
+    position: relative;
+    height: 7.5px;
+    border-radius: 100px;
+    background: linear-gradient(
+        to right,
+        rgba(15, 12, 9, 0.4) 0% 25%,
+        var(--white) 25% 75%,
+        rgba(15, 12, 9, 0.4) 75% 100%
+    );
+    margin: 7px 0;
+}
+
+.slider-thumb {
+    position: absolute;
+    top: 50%;
+    width: 15px;
+    height: 15px;
+    background-color: var(--second);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.slider-thumb-inicio {
+    left: 25%;
+}
+
+.slider-thumb-fim {
+    left: 75%;
+}
+
+.tempos {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2px;
+}
+
+.tempos time {
+    color: #fff;
+    font-size: 10px;
+    font-family: var(--font-dmono);
+    font-weight: 400;
+}
+
+.trecho-label {
+    color: var(--white);
+    font-size: 12px;
+    font-family: var(--font-dmono);
+    font-weight: 500;
+    font-style: italic;
+    text-align: center;
+    margin: 0;
+}
+
+/* ── Trocar música ── */
+.trocar-musica-btn {
+    height: 50px;
+    width: 100%;
+    border-radius: 15px;
+    background-color: rgba(228, 222, 207, 0.2);
+    border: 1px solid #cdc7b7;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.trocar-musica-btn span {
+    color: var(--white);
+    font-size: 14px;
+    font-family: var(--font-dmono);
+    font-weight: 500;
+}
+
+/* ── Opções ── */
+.opcoes {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding-bottom: 10px;
+}
+
+.btn-salvar,
+.btn-postar {
+    flex: 1;
+    border-radius: 15px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    overflow: hidden;
+}
+
+.btn-salvar {
+    background-color: rgba(51, 51, 51, 0.6);
+    box-shadow: 4px 4px 4px rgba(51, 51, 51, 0.25);
+}
+
+.btn-postar {
+    background-color: var(--primary);
+    box-shadow: 4px 4px 4px rgba(141, 21, 20, 0.25);
+}
+
+.btn-salvar span,
+.btn-postar span {
+    color: var(--white);
+    font-size: 14px;
+    font-family: var(--font-dmono);
+    font-weight: 500;
+}
