@@ -1,0 +1,182 @@
+:root {
+    --primary: #8d1514;
+    --primary-light: #b81f1d;
+    --second: #f8a20d;
+    --parchment: #f5eede;
+    --parchment-60: rgba(245, 238, 222, 0.6);
+    --parchment-15: rgba(245, 238, 222, 0.15);
+    --parchment-12: rgba(245, 238, 222, 0.12);
+    --card-bg: #14100f;
+    --night: #090506;
+}
+
+.principal {
+    padding: 12px 17px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+.principal::-webkit-scrollbar {
+    display: none;
+}
+
+/* ── Topo: voltar + título ── */
+.topo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    padding-bottom: 8px;
+}
+
+.btn-voltar {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--parchment-15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--parchment);
+    font-family: var(--font-dmono);
+    font-size: 18px;
+    text-decoration: none;
+    line-height: 1;
+}
+
+.titulo {
+    font-family: var(--font-syne);
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 26.4px;
+    letter-spacing: -0.22px;
+    color: var(--parchment);
+    margin: 0;
+}
+
+.ponto {
+    color: var(--second);
+}
+
+/* ── Seção de configurações ── */
+.config-secao {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.secao-label {
+    font-family: var(--font-dmono);
+    font-weight: 400;
+    font-size: 9px;
+    letter-spacing: 1.98px;
+    color: var(--second);
+    text-transform: uppercase;
+    margin: 0;
+}
+
+/* ── Card ── */
+.config-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--parchment-12);
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.config-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 16px 15px;
+    border-bottom: 1px solid var(--parchment-12);
+}
+
+.config-item:last-child {
+    border-bottom: none;
+}
+
+.config-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 0;
+}
+
+.config-title {
+    font-family: var(--font-dmono);
+    font-weight: 400;
+    font-size: 12px;
+    color: var(--parchment);
+    margin: 0;
+}
+
+.config-sub {
+    font-family: var(--font-dmono);
+    font-weight: 400;
+    font-size: 10px;
+    color: var(--parchment-60);
+    margin: 0;
+}
+
+.config-valor {
+    font-family: var(--font-dmono);
+    font-weight: 400;
+    font-size: 11px;
+    letter-spacing: 0.88px;
+    color: var(--second);
+    text-transform: uppercase;
+}
+
+/* ── Toggle switch ── */
+.toggle {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-slider {
+    position: absolute;
+    inset: 0;
+    background-color: var(--night);
+    border: 1px solid var(--parchment-12);
+    border-radius: 100px;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.toggle-slider::before {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-radius: 7px;
+    background-color: var(--parchment-60);
+    top: 50%;
+    left: 4px;
+    transform: translateY(-50%);
+    transition: left 0.2s, background-color 0.2s;
+}
+
+.toggle input:checked + .toggle-slider {
+    background-color: var(--primary);
+    border-color: var(--primary-light);
+}
+
+.toggle input:checked + .toggle-slider::before {
+    left: 22px;
+    background-color: var(--parchment);
+}

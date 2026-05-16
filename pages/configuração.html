@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Câmera Frontal</title>
+    <title>Ajustes</title>
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/configuracao.css">
     <link rel="shortcut icon" href="../assets/imgs/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../assets/css/fonts.css">
 </head>
@@ -26,7 +27,72 @@
             </header>
 
             <main class="principal">
-                <section class="hero"></section>
+                <section class="topo">
+                    <a href="../index.html" class="btn-voltar" aria-label="Voltar">←</a>
+                    <h1 class="titulo">Ajustes<span class="ponto">.</span></h1>
+                </section>
+
+                <section class="config-secao" aria-labelledby="label-camera">
+                    <h2 id="label-camera" class="secao-label">— CÂMERA</h2>
+                    <div class="config-card">
+                        <article class="config-item">
+                            <div class="config-text">
+                                <h3 class="config-title">Filtro automático</h3>
+                                <p class="config-sub">Aplica filtro pela vibe detectada</p>
+                            </div>
+                            <label class="toggle">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </article>
+
+                        <article class="config-item">
+                            <div class="config-text">
+                                <h3 class="config-title">Detecção em tempo real</h3>
+                                <p class="config-sub">ML Kit analisa cena a cada frame</p>
+                            </div>
+                            <label class="toggle">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </article>
+
+                        <article class="config-item">
+                            <div class="config-text">
+                                <h3 class="config-title">Grade de composição</h3>
+                                <p class="config-sub">Regra dos terços no visor</p>
+                            </div>
+                            <label class="toggle">
+                                <input type="checkbox">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="config-secao" aria-labelledby="label-musica">
+                    <h2 id="label-musica" class="secao-label">— MÚSICA</h2>
+                    <div class="config-card">
+                        <article class="config-item">
+                            <div class="config-text">
+                                <h3 class="config-title">Sugestão automática</h3>
+                                <p class="config-sub">Gemini sugere após capturar</p>
+                            </div>
+                            <label class="toggle">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </article>
+
+                        <article class="config-item">
+                            <div class="config-text">
+                                <h3 class="config-title">Fonte do áudio</h3>
+                                <p class="config-sub">API que entrega o preview</p>
+                            </div>
+                            <span class="config-valor">DEEZER</span>
+                        </article>
+                    </div>
+                </section>
             </main>
 
             <footer class="rodape">
